@@ -29,6 +29,10 @@ CHIP_CSRCS += bk7258_timerisr.c
 CHIP_CSRCS += bk7258_allocateheap.c
 CHIP_CSRCS += bk7258_serial.c
 
+ifeq ($(CONFIG_LCD_GC9D01),y)
+CHIP_CSRCS += bk7258_gc9d01.c
+endif
+
 # --- To be implemented (M2/M3) ---
 # CHIP_CSRCS += bk7258_clockconfig.c  # DPLL 480MHz clock config
 # CHIP_CSRCS += bk7258_gpio.c         # GPIO / pin mux

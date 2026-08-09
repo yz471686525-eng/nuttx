@@ -21,6 +21,10 @@
 set(SRCS bk7258_start.c bk7258_lowputc.c bk7258_irq.c bk7258_timerisr.c
          bk7258_allocateheap.c bk7258_serial.c)
 
+if(CONFIG_LCD_GC9D01)
+  list(APPEND SRCS bk7258_gc9d01.c)
+endif()
+
 # --- To be implemented (M2/M3) ---
 # list(APPEND SRCS bk7258_clockconfig.c bk7258_gpio.c)
 
